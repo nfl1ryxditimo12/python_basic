@@ -98,6 +98,7 @@ print(s1 - s2)                      # 차집합
 print(s1.difference(s2))
 
 # 추가 & 제거
+
 s3 = set([7, 8, 10, 15])
 
 s3.add(18)              # set 값 추가
