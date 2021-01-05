@@ -40,10 +40,10 @@ print('{} and {}'.format('You', 'Me'))
 # 결과 : You and Me
 
 print("{0} and {1} and {0}".format('You', 'Me'))
-You and Me and You
+# You and Me and You
 
 print("{a} are {b}".format(a='You', b='Me'))
-You are Me
+# You are Me
 
 # %s : 문자, %d : 정수, %f : 실수
 
