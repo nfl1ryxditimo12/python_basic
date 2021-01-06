@@ -163,7 +163,7 @@ try:
     z = 'Cho'
     x = name.index(z)
     print('{} Found it! in name'.format(z, x+1))
-except ValueError as l:                                     # 무슨 에러가 뜬지 알기 쉽게 계층적으로 뜰 것 같은 오류를 작성하는게 좋다
+except ValueError as l:                                # 무슨 에러가 뜬지 알기 쉽게 계층적으로 뜰 것 같은 오류를 작성하는게 좋다
     print(l)
 except IndexError:                                           
     print('Not Found it! - Occurred IndexError!')
@@ -186,7 +186,7 @@ try:
     if a == 'Kim':
         print('Ok 허가!')
     else:
-        raise ValueError
+        raise ValueError                              # if 구문에서 raise로 오류를 직접 만들수 있다.
 except ValueError:
     print('문제 발생!')
 except Exception as f:
