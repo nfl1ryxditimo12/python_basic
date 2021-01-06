@@ -17,7 +17,10 @@ def hello(world):
     print("Hello", world)
 
 hello("python")
+# 결과 : Hello python
+
 hello(777)
+# 결과 : Hello 777
 
 # 예제 2
 
@@ -27,6 +30,7 @@ def hello_return(world):
 
 func = hello_return("Python!!!!!")
 print(func)
+# 결과 : Hello Python!!!!!
 
 # 예제 3 (다중리턴)
 
@@ -39,6 +43,7 @@ def func_mul(x):
 
 val1, val2, val3 = func_mul(100)
 print(type(val1), val2, val3)
+# 결과 : <class : 'int'> 20000 30000
 
 # 예제 4 (데이터 타입 반환)
 
@@ -50,7 +55,8 @@ def func_mul2(x):
     return [y1, y2, y3]
 
 lt = func_mul2(100)
-print(lt, type(lt[0]))
+print(lt, type(lt))
+# 결과 : [10000, 20000, 30000] <class : 'list'>
 
 # 예제 5
 # *args, *kwargs
@@ -64,8 +70,18 @@ def args_func(*args):                   # args 는 매개변수가 몇 개 올�
         print(i, v)
 
 args_func('kim')
+# 결과 : 0 kim
+
 args_func('kim', 'park')
+# 결과 :
+# 0 kim
+# 1 park
+
 args_func('kim', 'park', 'Lee')
+# 결과 :
+# 0 kim
+# 1 park
+# 2 Lee
 
 print('\n\n\n')
 
@@ -79,7 +95,13 @@ def kwargs_func(**kwargs):
         print(k, v)
 
 kwargs_func(name1 = 'Kim')
+# 결과 : name Kim
+
 kwargs_func(name1 = 'Kim', name2 = 'Park', name3 = "Lee")
+# 결과 :
+# name1 kim
+# name2 Park
+# name3 Lee
 
 print("\n\n\n")
 
@@ -89,7 +111,10 @@ def example_mul(arg1, arg2, *args, **kwargs):
     print(arg1, arg2, args, kwargs)
 
 example_mul(10, 20)
+# 결과 : 10 20 () {}
+
 example_mul(10, 20, 'park', 'kim', age1 = 24, age2 = 35)
+# 결과 : 10 20 ('park', 'kim') {'age1' : 24, 'age2' : 35}
 
 print("\n\n")
 
@@ -105,6 +130,9 @@ def nested_func(num):
     func_in_func(num + 1000)
 
 nested_func(10000)
+# 결과 :
+# in func
+# >>> 11000
 
 # 예제 7 (hint)
 
@@ -116,6 +144,7 @@ def func_mul3(x : int) -> list:
     return [y1, y2, y3]
 
 print(func_mul3(5))
+# 결과 : [500, 1000, 1500]
 
 # 람다식 예제
 # 람다식 : 메모리 절약, 가독성 향상, 코드 간결
@@ -129,19 +158,28 @@ def mul_10(num : int) -> int:
 
 var_func = mul_10
 print(var_func)
+# 결과 : 함수 메모리 위치
+
 print(type(var_func))
+# 결과 : <class : 'function'>
 
 print(var_func(10))
+# 결과 : 100
 
 lambda_mul_10 = lambda num: num * 10
 
 print('>>>', lambda_mul_10(10))
+# 결과 : 100
+# 람다식 함수 표현 방법
+# lambda 변수: 계산
 
 def func_final(x, y, func):
     print( x * y * func(10))
 
 func_final(10, 10, lambda_mul_10)
+# 결과 : 1000
 
 # 한번만 사용 할 경우 바로 람다식을 만들어서 사용 할 수 있다.
 
 print(func_final(10, 10, lambda x : x * 1000))
+# 결과 : 100000
