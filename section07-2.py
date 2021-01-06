@@ -11,16 +11,20 @@
 class Car:
     """Parent Class"""
     def __init__(self, tp, color):
+        # 클래스가 호출되면 바로 실행되는 메서드
         self.type = tp
+        # 인스턴스 변수
         self.color = color
 
     def show(self):
         return 'Car Class "Show method!"'
 
 class BmwCar(Car):
+    # Car 클래스를 상속 받았다
     """Sub Class"""
     def __init__(self, car_name, tp, color):
         super().__init__(tp, color)
+        # 슈퍼클래스의 init을 불러온다
         self.car_name = car_name
 
     def show_model(self) -> None:
@@ -37,6 +41,7 @@ class BenzCar(Car):
     
     def show(self):
         print(super().show())
+        # 슈퍼클래스의 show() 메서드도 불러온다
         return 'Car Info : %s %s %s' % (self.car_name, self.type, self.color)
 
 # 일반 사용
@@ -67,6 +72,7 @@ print(model3.show())
 # Inheritance Info
 
 print(BmwCar.mro())
+# 클래스의 정보를 알려준다
 print(BenzCar.mro())
 
 print("\n\n")
