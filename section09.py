@@ -95,12 +95,12 @@ print("\n=====================================\n")
 # f.close()
 
 with open('./resource/score.txt', 'r') as f:
-    score = []
-    for line in f:
-        score.append(int(line))
+    score = []                                                      # 리스트 생성
+    for line in f:                                                  # 파일의 값들을 for 문으로 하나씩 불러옴
+        score.append(int(line))                                     # score 리스트에 파일 값들을 순차적으로 집어넣음
     print(score)
 
-print('Average : {:6.3}'.format(sum(score)/len(score)))
+print('Average : {:6.3}'.format(sum(score)/len(score)))             # score 리스트 안의 값들의 평균을 냄
 
 print("\n=====================================\n")
 
@@ -108,32 +108,32 @@ print("\n=====================================\n")
 
 # 예제 1
 
-with open('./resource/text1.txt', 'w') as f:
+with open('./resource/text1.txt', 'w') as f:                        # 파일 읽기는 r 쓰기는 w 추가는 a 로 이루어진다.
     f.write('Niceman!\n')
 
 # 예제 2
 
-with open('./resource/text1.txt', 'a') as f:
+with open('./resource/text1.txt', 'a') as f:                        # 파일 추가
     f.write('Goodman!\n')
 
 # 예제 3
 
-from random import randint
+from random import randint                                          # 랜덤함수 생성
 
 with open('./resource/text2.txt', 'w') as f:
     for cnt in range(6):
-        f.write(str(randint(1, 50)))
+        f.write(str(randint(1, 50)))                                # 1 - 49 까지의 무작위 수를 문자열 형식으로 파일에 쓴다.
         f.write('\n')
 
 # 예제 4
 # writelines : 리스트 -> 파일로 저장
 
 with open('./resource/text3.txt', 'w') as f:
-    list = ['kin\n', 'Park\n', 'Cho\n']
+    list = ['kin\n', 'Park\n', 'Cho\n']                             # 리스트를 파일에 쓴다
     f.writelines(list)
 
 # 예제 5
 
 with open('./resource/text4.txt', 'w') as f:
-    print('Test Contents1!', file=f)
+    print('Test Contents1!', file=f)                                # print 함수로도 파일 쓰기가 가능하다
     print('Test Contents2!', file=f)
